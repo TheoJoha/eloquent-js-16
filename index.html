@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="480" height="240"></canvas>
+
+    <script>
+        let cx = document.querySelector("canvas").getContext("2d")
+        cx.beginPath()
+        cx.moveTo(40, 40)
+        cx.lineTo(80, 40)
+        cx.lineTo(100, 80)
+        cx.lineTo(20, 80)
+        cx.fill()
+    </script>
+    
+</body>
+</html>
