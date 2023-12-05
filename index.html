@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <canvas width="480" height="240"></canvas>
 
     <script>
-        let cx = document.querySelector("canvas").getContext("2d")
-        cx.beginPath()
-        cx.moveTo(40, 40)
-        cx.lineTo(80, 40)
-        cx.lineTo(100, 80)
-        cx.lineTo(20, 80)
-        cx.fill()
+      let cx = document.querySelector("canvas").getContext("2d");
+
+      // trapezoid
+      cx.beginPath();
+      cx.moveTo(40, 40);
+      cx.lineTo(80, 40);
+      cx.lineTo(100, 80);
+      cx.lineTo(20, 80);
+      cx.fill();
+
+      // red diamond
+      cx.beginPath();
+      cx.moveTo(120, 40);
+      cx.lineTo(140, 60);
+      cx.lineTo(120, 80);
+      cx.lineTo(100, 60);
+      cx.fill();
+
+      // zigzagging line
+      cx.beginPath();
+      cx.moveTo(160, 40);
+      var x = 160;
+      var y = 40;
+      for (let i = 0; i < 11; i++) {
+        if (i % 2 === 0) {
+          x = 160;
+        } else {
+          x = 200;
+        }
+
+        cx.lineTo(x, y);
+        y += 4;
+      }
+      cx.stroke();
+
+      // spiral made up of 100 straight line segments
+      
+      // yellow star
+      cx.beginPath()
+      cx.moveTo(240, 40)
+      cx.quadraticCurveTo(260, 60, 240, 60)
+      cx.quadraticCurveTo(260, 60, 240, 80)
+      cx.quadraticCurveTo(260, 60, 260, 80)
+      cx.quadraticCurveTo(260, 60, 280, 80)
+      cx.quadraticCurveTo(260, 60, 280, 60)
+      cx.quadraticCurveTo(260, 60, 280, 40)
+      cx.quadraticCurveTo(260, 60, 260, 40)
+      cx.quadraticCurveTo(260, 60, 240, 40)
+      cx.stroke()
+
     </script>
-    
-</body>
+  </body>
 </html>
